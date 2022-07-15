@@ -1,0 +1,226 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,300;0,600;0,700;1,300;1,600;1,700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root { 
+    font-size: 62.5%; /* 1rem = 10px */
+
+    --Blue: hsl(223, 87%, 63%);
+    --Pale-Blue: hsl(223, 100%, 88%);
+    --Light-Red: hsl(354, 100%, 66%);
+    --Gray: hsl(0, 0%, 59%);
+    --Very-Dark-Blue: hsl(209, 33%, 12%);
+}
+
+html, body {
+    font-family: 'Libre Franklin', sans-serif;
+}
+
+ul {
+    list-style: none;
+}
+
+/*=== Mobile First ===*/
+
+.container {
+    max-width: 70rem;
+    margin: 3rem auto;
+    padding: 0 2rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .header {
+    width: 100%;
+}
+
+.container .header .logo img {
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 5rem;
+}
+
+.container .header h1 {
+    font-size: 2rem;
+    font-weight: 500;
+    color: var(--Gray);
+    text-align: center;
+
+    margin-bottom: 2rem;
+}
+
+.container .header h1 strong {
+    font-weight: 600;
+    color: var(--Very-Dark-Blue);
+}
+
+.container .header p {
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: var(--Very-Dark-Blue);
+    text-align: center;
+
+    margin-bottom: 5rem;
+}
+
+.container .header .form-control {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+}
+
+.container .header .form-control input {
+    width: 100%;
+    padding: 1rem;
+    border-radius: 3rem;
+}
+
+.container .header .form-control input#email {
+    border: none;
+    outline: 1px solid var(--Blue);
+    
+    margin-bottom: 7rem;
+}
+
+.container .header .form-control.erro input#email {
+    outline: 1px solid var(--Light-Red);
+}
+
+.container .header .form-control .paragraph {
+    visibility: hidden;
+
+    position: absolute;
+    top: 22%;
+}
+
+.container .header .form-control.erro .paragraph {
+    color: var(--Light-Red);
+    font-weight: 500;
+    visibility: visible;
+}
+
+.container .header .form-control input#submit {
+    border: none;
+    background-color: var(--Blue);
+    color: white;
+    box-shadow: 5px 10px 10px rgba(194, 211, 255);
+
+    cursor: pointer;
+
+    margin-bottom: 10rem;
+    margin-top: -5rem;
+}
+
+.container .header .form-control.erro input#submit {
+    margin-top: -3rem;
+}
+
+.container .content .dashboard img {
+    width: 100%;
+
+    margin-bottom: 5rem;
+}
+
+.container .content .icons ul{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.container .content .icons li {
+    width: 4rem;
+    height: 4rem;
+    border: 1px solid var(--Pale-Blue);
+    border-radius: 50%;
+
+    position: relative;
+}
+
+.container .content .icons li:hover {
+    background-color: var(--Blue);
+}
+
+.container .content .icons ul li svg {
+    stroke: var(--Blue);
+    fill: var(--Blue);
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.container .content .icons ul li svg:hover {
+    stroke: #fff;
+    fill: #fff;
+}
+
+.container .content .icons ul li svg#instagram{
+    fill: none;
+}
+
+.container .content .footer-icons p {
+    text-align: center;
+    color: var(--Gray);
+
+    margin-top: 2rem;
+}
+
+.attribution { 
+    font-size: 1.1rem; 
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.attribution a { 
+    color: hsl(228, 45%, 44%); 
+}
+
+@media(min-width: 1024px) {
+    .container {
+        max-width: 100rem;
+    }
+
+    .container .header .form-control {
+        flex-direction: row;
+        gap: 2rem; 
+
+        position: relative;
+    }
+
+    .container .header .form-control input#email {
+        margin-bottom: 10rem;
+    }
+
+    .container .header .form-control .paragraph {
+        position: absolute;
+        top: 30%;
+        left: 1%;
+    }
+
+    .container .header .form-control input#submit {
+       width: 40%;
+       margin-bottom: 5.4rem;
+    }
+
+    .container .header .form-control.erro input#submit {
+        margin-bottom: 7rem;
+    }
+}
+
+@media(max-width: 200px) {
+    .container .header form input#email::-webkit-input-placeholder {
+        font-size: 1rem;
+        font-weight: 600;
+    }
+}
